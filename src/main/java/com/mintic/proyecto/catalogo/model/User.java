@@ -1,8 +1,6 @@
 package com.mintic.proyecto.catalogo.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,18 +11,22 @@ import java.io.Serializable;
  */
 
 @Entity
-@Table(name = "admin")
+@Table(name = "user",indexes=@Index(name="indx_email", columnList = "user_email", unique = true))
 @Data
-@AllArgsConstructor
+@RequiredArgsConstructor
 @NoArgsConstructor
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(nullable = false,length = 50, unique = true)
-    private  String user_email;
-    @Column(nullable = false,length = 80)
-    private  String user_name;
-    @Column(nullable = false,length = 50)
-    private  String user_password;
+    @NonNull
+    @Column(name = "user_email",nullable = false,length = 50)
+    private  String email;
+    @NonNull
+    @Column(name = "user_password",nullable = false,length = 50)
+    private  String password;
+    @NonNull
+    @Column(name = "user_name",nullable = false,length = 50)
+    private  String name;
+
 }

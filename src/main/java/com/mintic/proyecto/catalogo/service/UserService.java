@@ -21,39 +21,32 @@ public class UserService {
     //Metodo para agregar usuario
     public User save(User user){
         if (user.getId() == null){
-            return  userRepository.save(user);
-        }else{
-            Optional<User> user1 = userRepository.getUser(user.getId());
-
-            if (user1.isEmpty()){
+            if (existeEmail(user.getEmail()) == false){
                 return userRepository.save(user);
             }else {
                 return  user;
             }
+        }else{
+            return user;
         }
+    }
+
+    //Metodo para validar email
+    public boolean existeEmail(String email){
+        return  userRepository.validateEmail(email);
     }
 
     //Metodo para iniciar sesion
     public User singIn(String email, String password){
-        User userBD = userRepository.singIn(email, password);
+        Optional<User> userBD = userRepository.singIn(email, password);
 
-        if (userBD.getId() != null){
-            return userBD;
-        }else {
-            User userR = new User(null,email,"NO DEFINIDO",password);
-            return  userR;
-        }
-
-    }
-
-    //Metodo para validar email
-    public boolean validateEmail(String email){
-        User userBD = userRepository.validateEmail(email);
-
-        if (userBD.getId() == null){
-            return false;
-        }else {
-            return true;
+        if (userBD.isEmpty()){
+            return new User(email,password,"NO DEFINIDO");
+        }else{
+            return userBD.get();
         }
     }
+
+
+
 }

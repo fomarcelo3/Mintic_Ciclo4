@@ -22,9 +22,12 @@ public class UserRepository {
 
     public  void delete(User user) { userCrudRepository.delete(user);}
 
-    public User singIn(String email, String password){
-        return userCrudRepository.findByUser_emailAndUser_password(email,password);
+    public Optional<User> singIn(String email, String password){
+        return userCrudRepository.findByEmailAndPassword(email,password);
     }
 
-    public User validateEmail(String email) { return userCrudRepository.findByUser_email(email);}
+    public boolean validateEmail(String email) {
+        Optional<User> userBD = userCrudRepository.findByEmail(email);
+        return  !userBD.isEmpty();
+    }
 }

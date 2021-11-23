@@ -29,7 +29,12 @@ public class UserController {
 
     //Metodo para validar usuario por email
     @GetMapping("/{email}")
-    public boolean validateUser(@PathVariable String email){ return userService.validateEmail(email);}
+    public boolean validateUser(@PathVariable String email){ return userService.existeEmail(email);}
 
+    //Metodo para iniciar sesion de usuario
+    @GetMapping("/{email}/{password}")
+    public User signIn(@PathVariable("email") String email, @PathVariable("password") String password){
+        return userService.singIn(email,password);
+    }
 
 }
