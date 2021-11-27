@@ -1,9 +1,8 @@
-package com.mintic.proyecto.catalogo.repository.crud;
+package com.mintic.repository.crud;
 
-import com.mintic.proyecto.catalogo.model.User;
+import com.mintic.model.User;
 import org.springframework.data.repository.CrudRepository;
 
-import java.util.List;
 import java.util.Optional;
 
 //Interfaz clase User

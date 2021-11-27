@@ -1,7 +1,7 @@
-package com.mintic.proyecto.catalogo.controller;
+package com.mintic.controller;
 
-import com.mintic.proyecto.catalogo.model.User;
-import com.mintic.proyecto.catalogo.service.UserService;
+import com.mintic.model.User;
+import com.mintic.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

@@ -1,7 +1,7 @@
-package com.mintic.proyecto.catalogo.service;
+package com.mintic.service;
 
-import com.mintic.proyecto.catalogo.model.User;
-import com.mintic.proyecto.catalogo.repository.UserRepository;
+import com.mintic.model.User;
+import com.mintic.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

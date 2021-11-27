@@ -1,4 +1,4 @@
-package com.mintic.proyecto.catalogo;
+package com.mintic;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

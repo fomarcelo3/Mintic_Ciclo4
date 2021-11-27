@@ -1,4 +1,4 @@
-package com.mintic.proyecto.catalogo.model;
+package com.mintic.model;
 
 import lombok.*;
 

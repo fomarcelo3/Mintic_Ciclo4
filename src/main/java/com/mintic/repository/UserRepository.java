@@ -1,7 +1,7 @@
-package com.mintic.proyecto.catalogo.repository;
+package com.mintic.repository;
 
-import com.mintic.proyecto.catalogo.model.User;
-import com.mintic.proyecto.catalogo.repository.crud.UserCrudRepository;
+import com.mintic.model.User;
+import com.mintic.repository.crud.UserCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
